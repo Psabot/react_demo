@@ -5,17 +5,11 @@ import Grid from "./Grid"
 
 class App extends Component {
 
-  constructor(props) {
-      super(props)
-      this.state = {
-          gifList: []
-      };
+  state = {
+    gifList: []
+  };
 
-      this.getGif = this.getGif.bind(this)
-      this.removeElement = this.removeElement.bind(this)
-  }
-
-  getGif(searchValue) {
+  getGif = (searchValue) => {
     fetch('https://api.giphy.com/v1/gifs/random?api_key=jcLszNMlcMjQUY0vVQD95SNxftSkQgjy&tag=' + searchValue)
       .then((response) => response.json())
       .then((responseJson) => {
@@ -28,7 +22,7 @@ class App extends Component {
       });
   }
 
-  removeElement(key) {
+  removeElement = (key) => {
     let remainingArray = this.state.gifList
     remainingArray.splice(key, 1)
     this.setState({

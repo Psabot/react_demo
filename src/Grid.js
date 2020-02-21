@@ -2,11 +2,6 @@ import React, { Component } from 'react';
 import Image from "./Image";
 
 class Grid extends Component {
-
-    constructor(props) {
-        super(props)
-    }
-
     render() {
         const items = []
         for (const [key, value] of this.props.gifList.entries()) {

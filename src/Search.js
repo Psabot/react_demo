@@ -2,23 +2,17 @@ import React, { Component } from 'react';
 
 class Search extends Component {
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            searchValue: ''
-        };
+    state = {
+        searchValue: ''
+    };
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    handleChange(event) {
+    handleChange = (event) => {
         this.setState({
             searchValue: event.target.value
         })
     }
 
-    handleSubmit(event) {
+    handleSubmit = (event) => {
         this.props.callback(this.state.searchValue)
         event.preventDefault()
     }
